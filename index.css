@@ -376,3 +376,138 @@
     background-color: #D0E7FF; 
     box-shadow: 0 4px 10px rgba(68, 10, 143, 0.2);
   }
+
+
+
+/* Header Navigation Hover Animation */
+/* Header Navigation Hover Animation */
+header ul li a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+header ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #381664;
+  transition: width 0.3s ease;
+}
+
+header ul li a:hover {
+  color: #6b47dc;
+}
+
+header ul li a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section Title Animation */
+@keyframes titleFadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  50% {
+      opacity: 0.5;
+      transform: translateY(10px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.hero h1 {
+  animation: titleFadeIn 0.5s ease-out;
+}
+
+/* Hero Image Fade-In Animation */
+.hero img {
+  opacity: 0;
+  animation: heroImageFadeIn 0.5s forwards;
+}
+
+@keyframes heroImageFadeIn {
+  0% {
+      opacity: 0;
+      transform: scale(0.9);
+  }
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+/* Skills Hover and Reveal Animation */
+@keyframes skillReveal {
+  0% {
+      transform: translateX(-20px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+.skills-column .skill {
+  opacity: 1;
+  animation: skillReveal 0.5s forwards;
+  animation-timing-function: ease-out;
+}
+
+.skills-column:first-child .skill:nth-child(1) { animation-delay: 0.1s; }
+.skills-column:first-child .skill:nth-child(2) { animation-delay: 0.2s; }
+.skills-column:first-child .skill:nth-child(3) { animation-delay: 0.3s; }
+.skills-column:first-child .skill:nth-child(4) { animation-delay: 0.4s; }
+.skills-column:first-child .skill:nth-child(5) { animation-delay: 0.5s; }
+
+.skills-column:last-child .skill:nth-child(1) { animation-delay: 0.6s; }
+.skills-column:last-child .skill:nth-child(2) { animation-delay: 0.7s; }
+.skills-column:last-child .skill:nth-child(3) { animation-delay: 0.8s; }
+.skills-column:last-child .skill:nth-child(4) { animation-delay: 0.9s; }
+
+.skill:hover {
+  color: #6b47dc;
+  text-shadow: 2px 2px 5px rgba(107, 71, 220, 0.6);
+  transform: scale(1.05);
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+
+
+/* Footer Button Pulse Animation */
+@keyframes buttonPulse {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(68, 10, 143, 0.5);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+footer button:hover {
+  animation: buttonPulse 1s infinite;
+}
+
+/* New About Section Text Animation */
+.about p {
+  animation: aboutTextFade 3s infinite alternate;
+}
+
+@keyframes aboutTextFade {
+  0% {
+      opacity: 0.8;
+  }
+  100% {
+      opacity: 1;
+  }
+}
